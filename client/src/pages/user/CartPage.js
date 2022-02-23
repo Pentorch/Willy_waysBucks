@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 const Cart = () => {
   const router = useHistory();
 
-  const [product, setProduct] = useState({});
   const [state, dispatch] = useContext(AppContext);
   const [preview, setPreview] = useState(null); //For image preview
   const [form, setForm] = useState({
@@ -30,7 +29,7 @@ const Cart = () => {
 
   const deleteCart = (item) => {
     dispatch({
-      type: "REMOVE_FROM_CART",
+      type: "RESET_CART",
       payload: item,
     });
     saveCart();
